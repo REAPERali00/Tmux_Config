@@ -118,7 +118,8 @@ alias theme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 alias doc='cd ~/Documents/'
 alias dow='cd ~/Downloads/'
 alias bac='cd ../'
-alias updt='sudo apt update && sudo apt upgrade -y'
+alias nconf='cd ~/.config/nvim && nvim'
+alias updt='sudo nala update && sudo nala upgrade -y'
 alias py='python3'
 alias clip='xclip -selection clipboard'
 alias notes='cd ~/Documents/Notes_obs/;nvim'
@@ -135,8 +136,11 @@ alias num='seq -f "%g."'
 alias start-ssh='sudo systemctl start ssh;sudo systemctl enable ssh'
 alias stop-ssh='sudo systemctl stop ssh;sudo systemctl disable ssh'
 alias status-ssh='sudo systemctl status ssh'
-alias owner-wsl='ssh -J Owner@192.168.0.60 jadi0002@localhost'
-alias owner='ssh Owner@0.tcp.ngrok.io -p 17381'
+alias owner='ssh Owner@192.168.0.60'
+alias srch='cd $(find ~/ -type d | fzf) && clear'
+alias srcd='cd $(find . -type d | fzf) && clear'
+alias srcn='nvim $(fzf)'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -162,4 +166,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-
+# Custom function to change directory using fzf
+function cdfzf() {
+  cd "$(find ~/ -type d | fzf)" && clear
+}
+# Bind Alt+f to the cdfzf function
+bindkey -s '^[f' 'cdfzf\n'
