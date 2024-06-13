@@ -168,7 +168,18 @@ setopt appendhistory
 
 # Custom function to change directory using fzf
 function cdfzf() {
-  cd "$(find ~/ -type d | fzf)" && clear
+  srch
 }
+
+function nvfzf() {
+  cd ~/
+  local file
+  file=$(fzf)
+  if [[ -n "$file" ]]; then
+    cd "$(dirname "$file")"
+    nvim "$file"
+  fi
+}
+
 # Bind Alt+f to the cdfzf function
-bindkey -s '^[f' 'cdfzf\n'
+bindkey -s '^[f' 'nvfzf\n'
