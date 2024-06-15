@@ -183,3 +183,4 @@ function nvfzf() {
 
 # Bind Alt+f to the cdfzf function
 bindkey -s '^[f' 'nvfzf\n'
+bindkey -s '^[d' 'cdfzf\n'
