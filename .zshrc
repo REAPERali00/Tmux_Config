@@ -181,6 +181,22 @@ function nvfzf() {
   fi
 }
 
+function run_program(){
+  if [[ -f "./run.sh" ]]; then 
+    if [[ ! -x "./run.sh" ]]; then
+      chmod +x ./run.sh
+      echo "Executable permissions granted to run.sh"
+    fi
+    ./run.sh
+  else 
+    echo "run.sh not found"
+  fi
+}
+
 # Bind Alt+f to the cdfzf function
 bindkey -s '^[f' 'nvfzf\n'
 bindkey -s '^[d' 'cdfzf\n'
+bindkey -s '^[e' 'la\n'
+bindkey -s '^[r' 'run_program\n'
+
+
