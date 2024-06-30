@@ -131,7 +131,7 @@ alias s='tmux a'
 alias n='nvim'
 alias i='sudo nala install'
 alias conf='nvim ~/.zshrc'
-alias load='source ~/.zshrc'
+alias load='source ~/.zshrc && clear'
 alias i='sudo apt install'
 alias num='seq -f "%g."'
 alias start-ssh='sudo systemctl start ssh;sudo systemctl enable ssh'
@@ -140,6 +140,7 @@ alias status-ssh='sudo systemctl status ssh'
 alias srch='cd $(find ~/ -type d | fzf) && clear'
 alias srcd='cd $(find . -type d | fzf) && clear'
 alias srcn='nvim $(fzf)'
+alias wifi='nmcli connection up id'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
