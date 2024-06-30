@@ -200,5 +200,6 @@ bindkey -s '^[d' 'cdfzf\n'
 bindkey -s '^[e' 'la\n'
 bindkey -s '^[r' 'run_program\n'
 bindkey -s '^[n' 'notes\n'
+bindkey -s '^[b' 'cd .. \n'
 
 
