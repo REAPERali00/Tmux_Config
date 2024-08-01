@@ -201,6 +201,3 @@ bindkey -s '^[r' 'run_program\n'
 bindkey -s '^[n' 'notes\n'
 bindkey -s '^[b' 'bac\n'
 bindkey -s '^[a' 'c;neofetch\n'
-
-
-
