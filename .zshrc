@@ -196,7 +196,7 @@ function run_program(){
 # Bind Alt+f to the cdfzf function
 bindkey -s '^[f' 'nvfzf\n'
 bindkey -s '^[d' 'cdfzf\n'
-bindkey -s '^[e' 'la\n'
+bindkey -s '^[e' 'clear && la\n'
 bindkey -s '^[r' 'run_program\n'
 bindkey -s '^[n' 'notes\n'
 bindkey -s '^[b' 'bac\n'
